@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Team 020: AQI Prediction App</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+    <style>
+        html, body {
+                width: 90%;
+                height: 100%;
+                padding: 30px;
+                margin: auto;
+            }
+    </style>
+</head>
+<body>
+{% block content %}{% endblock %}
+    <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/register">
+        <span class="login100-form-title p-b-51">
+            {{ message }}
+        </span>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+            <input class="input100" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+            <input class="input100" type="text" name="email" placeholder="Email">
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "State is required">
+            <input class="input100" type="text" name="state" placeholder="State">
+            <span class="focus-input100"></span>
+            <select name="state" method="GET" action="/">
+                <option value="{{states[0]}}" selected>{{states[0]}}</option>
+                {% for state in states[1:] %}
+                  <option value="{{state}}">{{state}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "County is required">
+            <input class="input100" type="text" name="county" placeholder="County">
+            <span class="focus-input100"></span>
+            <select name="county" method="GET" action="/">
+                <option value="{{counties[0]}}" selected>{{counties[0]}}</option>
+                {% for county in counties[1:] %}
+                  <option value="{{county}}">{{county}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Q1 is required">
+            <input class="input100" type="text" name="q1" placeholder="Do you have any existing chronic/serious respiratory conditions?">
+            <span class="focus-input100"></span>
+            <select name="q1" method="GET" action="/">
+                <option value="{{options[0]}}" selected>{{options[0]}}</option>
+                {% for option in options[1:] %}
+                  <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Q2 is required">
+            <input class="input100" type="text" name="q2" placeholder="Do you have any existing chronic/serious heart conditions?">
+            <span class="focus-input100"></span>
+            <select name="q2" method="GET" action="/">
+                <option value="{{options[0]}}" selected>{{options[0]}}</option>
+                {% for option in options[1:] %}
+                  <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="wrap-input100 validate-input m-b-16" data-validate = "Q3 is required">
+            <input class="input100" type="text" name="q3" placeholder="Do you have children or elderly people around you on a regular basis?">
+            <span class="focus-input100"></span>
+            <select name="q3" method="GET" action="/">
+                <option value="{{options[0]}}" selected>{{options[0]}}</option>
+                {% for option in options[1:] %}
+                  <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="container-login100-form-btn m-t-17">
+            <button class="login100-form-btn">
+                Register
+            </button>
+        </div>
+    </form>
+    <div class='tableauPlaceholder' id='viz1638408680197' style='position: relative'>
+        <noscript>
+            <a href='#'>
+                <img alt='DB. Quick View ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;2K&#47;2KZNTTZJF&#47;1_rss.png' style='border: none' />
+            </a>
+        </noscript>
+        <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='path' value='shared&#47;2KZNTTZJF' /> 
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;2K&#47;2KZNTTZJF&#47;1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+        </object>
+    </div>                
+    <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1638408680197');                    
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        if ( divElement.offsetWidth > 800 ) { 
+            vizElement.style.width='1000px';
+            vizElement.style.height='827px';
+        } else if ( divElement.offsetWidth > 500 ) { 
+            vizElement.style.width='1000px';
+            vizElement.style.height='827px';
+        } else { 
+            vizElement.style.width='100%';
+            vizElement.style.height='727px';}                     
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+    </script>
+    <div class='tableauPlaceholder' id='viz1638408717452' style='position: relative'>
+        <noscript>
+            <a href='#'>
+                <img alt='DB.Trend ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AQ&#47;AQIDashboardTrendView&#47;DB_Trend&#47;1_rss.png' style='border: none' />
+            </a>
+        </noscript>
+        <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='AQIDashboardTrendView&#47;DB_Trend' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AQ&#47;AQIDashboardTrendView&#47;DB_Trend&#47;1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+        </object>
+    </div>                
+    <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1638408717452');                   
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        if ( divElement.offsetWidth > 800 ) { 
+            vizElement.style.width='1000px';
+            vizElement.style.height='677px';
+        } else if ( divElement.offsetWidth > 500 ) { 
+            vizElement.style.width='1000px';
+            vizElement.style.height='677px';
+        } else { 
+            vizElement.style.width='100%';
+            vizElement.style.height='727px';}                     
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+    </script>
+</body>
+</html>
