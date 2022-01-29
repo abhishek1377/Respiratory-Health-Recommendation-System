@@ -1,5 +1,5 @@
 # Respiratory-Health-Recommendation-System
-Respiratory Health Recommendation System based on Air Quality Index Forecasts
+Respiratory Health Recommendation System based on Air Quality Index Forecasts:
 
 This project aims to provide predictions and visualization of Air Quality Index across 100 counties in United States.  Air quality index or AQI forecasts are important as it’s one of the most useful measure of air quality calculated from different pollutant concentrations in the air.  Currently there are websites providing AQI forecasts but do not provide customized health recommendations. Using this product, Individuals can take appropriate preventive measures based on our recommendations and public authorities can use AQI forecasts to make decisions for policy making, urban planning and well-being of public health. The project is an  end to end product that creates forecasts, provides visualizations, and delivers personalized health recommendations.
 
