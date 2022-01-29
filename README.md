@@ -16,4 +16,9 @@ Results were evaluated using Root Mean Square Error values and found out that fo
 Based on our merged and forecast datasets, we have created interactive visualisations, to see the past 11 years trends, and forecasts. Users can choose from 1 to 6 pollutants, data range and counties as per requirement.
 
 
+![image](https://user-images.githubusercontent.com/15328642/151678210-3cff94d0-d508-4247-baa6-dab5478bb66f.png)
+
+![image](https://user-images.githubusercontent.com/15328642/151678260-2a5dafb0-bdf5-470e-af1f-f85249243456.png)
+
+
 
