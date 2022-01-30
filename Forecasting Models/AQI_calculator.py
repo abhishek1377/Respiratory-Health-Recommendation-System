@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def calculate_AQI_O3_8hr(o3_8hour_level):
     c = round(o3_8hour_level,3)
     aqi = 0.0
